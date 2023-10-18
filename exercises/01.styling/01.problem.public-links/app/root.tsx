@@ -1,3 +1,4 @@
+import { type LinksFunction } from '@remix-run/node'
 import { LiveReload, Scripts } from '@remix-run/react'
 import { KCDShop } from './kcdshop.tsx'
 
@@ -6,6 +7,11 @@ import { KCDShop } from './kcdshop.tsx'
 // - rel: 'icon'
 // - type: 'image/svg+xml'
 // - href: '/favicon.svg'
+
+export const links: LinksFunction = () => {
+	// 🐨 swap the hard-coded href here with the default import of the favicon
+	return [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
+}
 
 export default function App() {
 	return (
